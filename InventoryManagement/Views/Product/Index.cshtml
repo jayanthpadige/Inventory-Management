@@ -1,0 +1,51 @@
+﻿
+@model IEnumerable<InventoryManagement.Models.Product>
+
+@{
+    ViewBag.Title = "Inventory Management";
+}
+
+<h2>INVENTORY MANAGEMENT</h2>
+
+<p>
+    <a href="@Url.Action("Create", "Product")">
+        Add New Product
+    </a>
+</p>
+
+<table border="1" cellpadding="8" cellspacing="0">
+    <tr>
+        <th>Product ID</th>
+        <th>Product Name</th>
+        <th>Category</th>
+        <th>Quantity</th>
+        <th>Price</th>
+        <th>Actions</th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>@item.ProductId</td>
+            <td>@item.ProductName</td>
+            <td>@item.Category</td>
+            <td>@item.Quantity</td>
+            <td>@item.Price</td>
+            <td>
+                <a href="@Url.Action("Edit", new { id = item.ProductId })">
+                    Edit
+                </a>
+                |
+                <a href="@Url.Action("Delete", new { id = item.ProductId })">
+                    Delete
+                </a>
+            </td>
+        </tr>
+    }
+</table>
+
+<hr />
+
+<footer>
+    <p>© 2026 - My ASP.NET Application</p>
+</footer>

@@ -1,0 +1,47 @@
+﻿
+@model InventoryManagement.Models.Product
+
+@{
+    ViewBag.Title = "Add Product";
+}
+
+<h2>INVENTORY MANAGEMENT</h2>
+
+<h3>ADD NEW PRODUCT</h3>
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+
+    <p>
+        Product Name
+        <br />
+        @Html.TextBoxFor(m => m.ProductName)
+    </p>
+
+    <p>
+        Category
+        <br />
+        @Html.TextBoxFor(m => m.Category)
+    </p>
+
+    <p>
+        Quantity
+        <br />
+        @Html.TextBoxFor(m => m.Quantity)
+    </p>
+
+    <p>
+        Price
+        <br />
+        @Html.TextBoxFor(m => m.Price)
+    </p>
+
+    <button type="submit">Add Product</button>
+}
+
+<hr />
+
+<footer>
+    <p>© 2026 - My ASP.NET Application</p>
+</footer>
